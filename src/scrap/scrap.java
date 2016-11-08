@@ -21,11 +21,20 @@ public class scrap {
 			System.out.println("true");
 		
 		TextFormatter tf;
-		String test = "Hello, its me. I havent thought about you in a long long time";
+		//String test = "Hello, its me. I havent thought about you in a long long time";
+		//String test = "aabaccb";
+		String test = "This is _very_ good";
 		tf = new TextFormatter(test);
 		 System.out.println(tf.hello());
 		 String find = "_"; 
 		 int z = tf.findString(find, 0);
+		 System.out.println("one");
+		 String formattedString = tf.convertItalics();
+		 System.out.println("two");
+		 System.out.println(tf.convertItalics());
+		 System.out.println("three");
+		 System.out.println(formattedString);
+		 System.out.println("four");
 		 System.out.println(z);
 }
 }

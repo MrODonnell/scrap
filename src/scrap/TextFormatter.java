@@ -34,7 +34,44 @@ public class TextFormatter {
 		
 		return -1;
 	}
-	String hello ()
+	public int countStrings (String str)
+	{
+		int count = 0;
+		int psn = 0;
+		while(findString (str, psn) >= 0)
+		{
+			count++;
+			psn = findString (str, psn) +1;
+		}
+		
+		return count;
+	}
+	
+	public String convertItalics ()
+	{
+		if (countStrings ("_") % 2 == 1)
+		return line;
+
+		 System.out.println("convertItalics one");
+		String tag = "<I>";
+		String result = "";
+		int psn = 0;
+		while (findString ("_", psn) >= 0)
+		{
+			int newPsn = findString ("_", psn);
+			 System.out.println("convertItalics  inside one");
+			result = result + line.substring(psn, newPsn);
+			result = result + tag;
+			if (tag.equals("<I>"))
+				tag = "</I>";
+			else
+				tag = "<I>";
+			psn = newPsn + 1;
+		}
+		result = result + line.substring(psn);
+		return result;
+	}
+	public String hello ()
 	{
 		return "hello";
 	}
